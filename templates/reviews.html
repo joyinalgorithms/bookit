@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %}Reviews{% endblock %}
+
+{% block main %}
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Leave a Review</h1>
+        <form action="/submit_review" method="POST">
+            <div class="mb-3">
+                <label for="feedback" class="form-label">Your Review</label>
+                <textarea class="form-control" id="feedback" name="feedback" rows="5" required></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-custom px-4">Submit</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

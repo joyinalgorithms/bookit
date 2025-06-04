@@ -1,0 +1,58 @@
+.custom-card {
+    position: relative;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+}
+
+.custom-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.custom-card img:hover {
+    transform: scale(1.05);
+}
+
+.custom-card .overlay {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.custom-card .btn {
+    background-color: #FFA500;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    border: 2px solid white;
+    padding: 10px 20px;
+    margin: 5px 0;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.custom-card .btn:hover {
+    background-color: #e68a00;
+    transform: scale(1.05);
+}
+
+.see-more {
+    background-color: white;
+    color: #FFA500;
+    border: 2px solid #FFA500;
+    text-decoration: none;
+    color: black;
+}
+
+.see-more-link {
+    text-decoration: none;
+    color: black;
+}
+
+.see-more:hover {
+    background-color: #FFA500;
+    color: white;
+}

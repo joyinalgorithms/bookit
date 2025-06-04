@@ -1,0 +1,29 @@
+{% extends "loglayout.html" %}
+{% block title %}Login{% endblock %}
+
+{% block main %}
+    <div class="vividinklogocontainer">
+        <img class="vividinklogo" src="/static/images/vividinklogo.png">
+    </div>
+    <h1>Welcome back!</h1>
+    <h3>Sign in to your account.</h3>
+    <form action="/login" method="POST">
+        <div class="input-col">
+            <div>
+                <input id="loginuser" type="text" name="username" placeholder="Username" required autocomplete="off">
+            </div>
+            <div class="input-row">
+                <div class="password-container">
+                    <input type="password" name="password" placeholder="Password" id="password" required autocomplete="off">
+                    <span class="eye-icon" onclick="togglePassword('password')">&#128065;</span>
+                </div>
+
+            </div>
+            <a class="signuphere" href="/forgotpassword">Forgot password?</a>
+            <button type="submit" class="btn btn-custom signup-btn" id="login">Sign in</button>
+            <p>By continuing, you agree to our updated <a class="icon-link smaller-text" href="/termsconditions">Terms & Conditions</a> and <a class="icon-link" href="/privacypolicy">Privacy Policy</a></p>
+            <a class="signuphere" href="/signup">Sign up here</a>
+            <a class="signuphere more-margin-top" href="/adminlog">Admin</a>
+        </div>
+    </form>
+{% endblock %}

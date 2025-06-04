@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="/static/styles/books.css">
+        <link rel="stylesheet" href="/static/styles/loglayout.css">
+    </head>
+
+    <body>
+        <div class="background-img-container">
+            <img class="background-img" src="/static/images/leftimage.png" alt="">
+        </div>
+        <div class="main">
+
+            {% block main %}
+
+
+            {% endblock %}
+
+            <div class="flash-messages">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            {{ message }}
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+
+        </div>
+        <div class="background-img-container">
+            <img class="background-img" src="/static/images/rightimage.png" alt="">
+        </div>
+
+        <script src="/static/scripts/loglayout.js"></script>
+    </body>
+
+</html>

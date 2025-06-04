@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block title %}Edit Product{% endblock %}
+
+{% block main %}
+
+    <form method="POST">
+        <div class="edit_products">
+            <label for="stocks">Update Stocks:</label>
+            <input type="number" id="stocks" name="stocks" value="{{ product['stocks'] }}" min="0" required>
+            <button type="submit" class="btn btn-custom ">Update</button>
+        </div>
+    </form>
+
+
+{% endblock %}

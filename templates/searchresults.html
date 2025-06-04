@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block title %}Search{% endblock %}
+
+{% block main %}
+
+    {% if products %}
+        {% for product in products %}
+            <div class="item-container">
+                <div class="item-picture-container">
+                    <img class="book-img" src="{{ product['product_image'] }}" alt="{{ product['name'] }}">
+                </div>
+                <div class="item-details-container">
+                    <h5><strong>{{ product['name'] }}</strong></h5>
+                    <p class="smallest-text">{{ product['description'] }}</p>
+                    <p><strong>&dollar; {{ "%.2f"|format(product['price']) }}</strong></p>
+
+                    <div class="item-button-container">
+                        <form action="/add_to_cart" method="post">
+                            <input type="hidden" name="product_id" value="{{ product.productid }}">
+                            <input name="quantity" placeholder="Qty" class="quantity quantity-input" min="0" max="{{ product['stocks'] }}" type="number">
+                            <button type="submit" class="addtocart btn btn-custom signup-btn">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class="no-results">No results found for "{{ query }}"</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block title %}Cart{% endblock %}
+
+{% block main %}
+    <div class="main-cart-container">
+        <div class="reviewcart-container">
+            <h3>Review your order</h3>
+            <div class="all-cart-items">
+                {% for item in cart_items %}
+                    <div class="cart-item-container">
+                        <div class="cart-item-picture">
+                            <img class="book-img" src="{{ item['product_image'] }}" alt="{{ item['name'] }}">
+                        </div>
+                        <div class="cart-item-details">
+                            <p><strong>{{ item['name'] }}</strong></p>
+                            <p>Quantity: {{ item['quantity'] }}</p>
+                            <p>Price: ${{ "%.2f"|format(item['price']) }}</p>
+                            <p>Subtotal: ${{ "%.2f"|format(item['price'] * item['quantity']) }}</p>
+
+                            <form action="/remove_from_cart" method="POST" style="display:inline;">
+                                <input type="hidden" name="product_id" value="{{ item.productid }}">
+                                <input type="hidden" name="session_id" value="{{ item.sessionid }}">
+                                <button type="submit" class="btn btn-custom">Remove</button>
+                            </form>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="order-summary-container">
+            <h4>Order Summary</h4>
+            <div class="order-summary-row">
+                <p>Items ({{ cart_count }}): </p>
+                <p>${{ "%.2f"|format(total_cost_of_items) }}</p>
+            </div>
+
+            <div class="order-summary-row">
+                <p>Shipping Fee: </p>
+                <p id="shipping-fee">$0.00</p>
+                <input type="hidden" id="selected-shipping-fee" name="shipping_fee" value="0">
+            </div>
+
+            <hr>
+            <div class="order-summary-row">
+                <p>Total: </p>
+                <p id="order-total" data-items-total="{{ total_cost_of_items }}">
+                    ${{ "%.2f"|format(total_cost_of_items) }}
+                </p>
+            </div>
+
+            <hr>
+            <form action="/place_order" method="POST">
+                <div class="place-order-container">
+                    <span>Delivery Address</span>
+                    <textarea class="input-order delivery-address" placeholder="Please type in a more specific address." name="delivery_address" id="delivery-address" required></textarea>
+                    <span>Delivery Options</span>
+                    <div class="delivery-options">
+                        <p>
+                            {% for option in delivery_options %}
+                                <label>
+                                    <input type="radio" name="delivery_option" value="{{ option.fee }}" data-label="{{ option.label }}">
+                                    <input type="hidden" name="delivery_date" value="{{ option.date }}">
+                                    {{ option.date }} - <strong>{{ option.label }}</strong>
+                                </label><br>
+                            {% endfor %}
+                        </div>
+
+                        <input type="hidden" name="items_total" value="{{ total_cost_of_items }}">
+                        <button type="submit" class="btn btn-custom place-order" disabled>Place Order</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+{% endblock %}

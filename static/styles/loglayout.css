@@ -1,0 +1,168 @@
+body {
+    background-color: #FCEBD7;
+    display: flex;
+    margin: 0;
+    padding: 0px;
+    overflow: hidden;
+
+
+}
+
+h3 {
+    margin-top: 0px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+}
+
+.main h1,
+h3,
+a {
+    text-align: center;
+}
+
+.background-img {
+    height: 695px;
+    width: 100%;
+}
+
+.background-img-container {
+    flex: 1;
+}
+
+p,
+h1,
+h3 {
+    margin-bottom: 5px;
+}
+
+a {
+    color: black;
+
+}
+
+#login {
+    margin-top: 20px;
+}
+
+input {
+    border: none;
+    padding: 10px 20px;
+    width: 300px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.input-col {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-row {
+    display: flex;
+}
+
+.main {
+    padding: 20px;
+}
+
+.signup-btn {
+    border: none;
+    border-radius: 20px;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+}
+
+.main {
+    flex: 1;
+}
+
+.vividinklogo {
+    width: 70px;
+    height: 70px;
+    border-radius: 40px;
+}
+
+.terms-checkbox {
+    display: flex;
+    align-items: top;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.terms-checkbox input[type="checkbox"] {
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+
+.terms-checkbox label {
+    margin: 0;
+}
+
+.scrollable-area {
+    max-height: 500px;
+    overflow-y: scroll;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    margin: 20px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.signuphere {
+    text-align: center;
+}
+
+.vividinklogocontainer {
+    margin: auto;
+}
+
+.feature-unavailable {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flash-messages {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.eye-icon {
+    cursor: pointer;
+    margin-left: -30px;
+    position: relative;
+}
+
+.password-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin-left: -20px;
+}
+
+.more-margin-top {
+    margin-top: 30px;
+}
